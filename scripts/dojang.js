@@ -28,9 +28,9 @@ function mostrarDojangs(dojangs) {
 
     provincias[provincia].forEach(d => {
       const li = document.createElement("li");
-      li.innerHTML = `<strong>${d.nombre}</strong> (${d.ciudad})<br>
+      li.innerHTML = `<strong>${d.dojang}</strong> (${d.ciudad})<br>
                       Dirección: ${d.direccion}<br>
-                      Contacto: ${d.contacto}<br>
+                      Instructor: ${d.instructor}<br>
                       <a href="${d.link}" target="_blank">Ver más</a>`;
       ul.appendChild(li);
     });
