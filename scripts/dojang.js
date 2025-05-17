@@ -7,26 +7,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function mostrarDojangs(dojangs) {
   const contenedor = document.getElementById("contenedor-dojangs");
-  const provincias = {};
+  const regiones = {};
 
   dojangs.forEach(d => {
-    if (!provincias[d.provincia]) provincias[d.provincia] = [];
-    provincias[d.provincia].push(d);
+    if (!regiones[d.region]) regiones[d.region] = [];
+    regiones[d.region].push(d);
   });
 
-  for (const provincia in provincias) {
+  for (const region in regiones) {
     const seccion = document.createElement("div");
-    seccion.classList.add("provincia");
+    seccion.classList.add("region");
 
     const titulo = document.createElement("div");
-    titulo.classList.add("provincia-titulo");
-    titulo.textContent = provincia;
+    titulo.classList.add("region-titulo");
+    titulo.textContent = region;
     titulo.onclick = () => ul.classList.toggle("visible");
 
     const ul = document.createElement("ul");
     ul.classList.add("dojang-lista");
 
-    provincias[provincia].forEach(d => {
+    regiones[region].forEach(d => {
       const li = document.createElement("li");
       li.innerHTML = `<strong>${d.dojang}</strong> (${d.ciudad})<br>
                       Dirección: ${d.direccion}<br>

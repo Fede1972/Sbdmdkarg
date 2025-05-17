@@ -70,13 +70,13 @@ h1 {
 }
 
 /* Secciones para Dojangs */
-.provincia {
+.region {
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #ccc;
   padding-bottom: 1rem;
 }
 
-.provincia-titulo {
+.region-titulo {
   cursor: pointer;
   background-color: #002244;
   color: white;
