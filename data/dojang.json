@@ -1,0 +1,26 @@
+[
+  {
+    "provincia": "Buenos Aires",
+    "ciudad": "La Plata",
+    "nombre": "Dojang La Plata",
+    "direccion": "Calle 123, La Plata",
+    "contacto": "351-1234567",
+    "link": "dojangs/dojang-la-plata.html"
+  },
+  {
+    "provincia": "Buenos Aires",
+    "ciudad": "Morón",
+    "nombre": "Dojang Morón",
+    "direccion": "Av. Rivadavia 456, Morón",
+    "contacto": "11-23456789",
+    "link": "dojangs/dojang-moron.html"
+  },
+  {
+    "provincia": "Córdoba",
+    "ciudad": "Córdoba Capital",
+    "nombre": "Dojang Central Córdoba",
+    "direccion": "San Juan 900, Córdoba",
+    "contacto": "351-7654321",
+    "link": "dojangs/dojang-cordoba-capital.html"
+  }
+]
