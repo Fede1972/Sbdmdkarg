@@ -1,48 +1,42 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   fetch('data/dojangs.json')
     .then(response => response.json())
-    .then(data => renderDojangs(data))
-    .catch(error => console.error('Error al cargar datos:', error));
+    .then(data => mostrarDojangs(data))
+    .catch(error => console.error('Error cargando los dojangs:', error));
 });
 
-function renderDojangs(dojangs) {
-  const container = document.getElementById('contenedor-dojangs');
-
-  // Agrupar por provincia
+function mostrarDojangs(dojangs) {
+  const contenedor = document.getElementById("contenedor-dojangs");
   const provincias = {};
+
   dojangs.forEach(d => {
     if (!provincias[d.provincia]) provincias[d.provincia] = [];
     provincias[d.provincia].push(d);
   });
 
-  // Renderizar cada provincia
   for (const provincia in provincias) {
-    const provDiv = document.createElement('div');
-    provDiv.classList.add('provincia');
+    const seccion = document.createElement("div");
+    seccion.classList.add("provincia");
 
-    const title = document.createElement('h2');
-    title.textContent = provincia;
-    title.classList.add('provincia-titulo');
-    title.addEventListener('click', () => {
-      lista.classList.toggle('visible');
-    });
+    const titulo = document.createElement("div");
+    titulo.classList.add("provincia-titulo");
+    titulo.textContent = provincia;
+    titulo.onclick = () => ul.classList.toggle("visible");
 
-    const lista = document.createElement('ul');
-    lista.classList.add('dojang-lista');
+    const ul = document.createElement("ul");
+    ul.classList.add("dojang-lista");
 
     provincias[provincia].forEach(d => {
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <strong>${d.nombre}</strong><br>
-        ${d.ciudad} - ${d.direccion}<br>
-        Contacto: ${d.contacto}<br>
-        <a href="${d.link}">Ver más</a>
-      `;
-      lista.appendChild(li);
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${d.nombre}</strong> (${d.ciudad})<br>
+                      Dirección: ${d.direccion}<br>
+                      Contacto: ${d.contacto}<br>
+                      <a href="${d.link}" target="_blank">Ver más</a>`;
+      ul.appendChild(li);
     });
 
-    provDiv.appendChild(title);
-    provDiv.appendChild(lista);
-    container.appendChild(provDiv);
+    seccion.appendChild(titulo);
+    seccion.appendChild(ul);
+    contenedor.appendChild(seccion);
   }
 }
