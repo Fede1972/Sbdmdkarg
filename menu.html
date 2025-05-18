@@ -5,10 +5,11 @@
 
     <!-- Menú Desktop -->
     <ul class="hidden md:flex space-x-6 text-white font-semibold">
+      <li><a href="index.html" class="hover:text-red-600">Inicio</a></li>
       <li><a href="5valores.html" class="hover:text-red-600">Valores Moo Do</a></li>
-      <li><a href="moodukkwan.html" class="hover:text-red-600">Moo Duk Kwan</a></li>
+      <li><a href="construccion.html" class="hover:text-red-600">Moo Duk Kwan</a></li>
       <li><a href="dojang.html" class="hover:text-red-600">Dojang</a></li>
-      <li><a href="programas.html" class="hover:text-red-600">Programas</a></li>
+      <li><a href="construccion.html" class="hover:text-red-600">Programas</a></li>
       <li><a href="https://www.sbdactivo.com/" target="_blank" class="hover:text-red-600">Asociación Argentina</a></li>
     </ul>
 
@@ -18,10 +19,21 @@
 
   <!-- Menú Móvil -->
   <ul id="mobile-menu" class="md:hidden hidden flex-col space-y-2 mt-4 text-white font-semibold">
+    <li><a href="index.html" class="hover:text-red-600">Inicio</a></li>
     <li><a href="5valores.html" class="hover:text-red-600">Valores Moo Do</a></li>
-    <li><a href="moodukkwan.html" class="hover:text-red-600">Moo Duk Kwan</a></li>
+    <li><a href="construccion.html" class="hover:text-red-600">Moo Duk Kwan</a></li>
     <li><a href="dojang.html" class="hover:text-red-600">Dojang</a></li>
-    <li><a href="programas.html" class="hover:text-red-600">Programas</a></li>
+    <li><a href="construccion.html" class="hover:text-red-600">Programas</a></li>
     <li><a href="https://www.sbdactivo.com/" target="_blank" class="hover:text-red-600">Asociación Argentina</a></li>
   </ul>
+
+  <script>
+    // Toggle menú móvil
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </nav>
