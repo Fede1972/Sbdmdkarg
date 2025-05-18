@@ -5,22 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dojang - Soo Bahk Do Argentina</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="pagina-dojang">
-  <header>
-    <!-- Logo y redes sociales (igual que en index) -->
-  </header>
 
-  <nav class="menu">
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="5valores.html">Valores Moo do</a></li>
-      <li><a href="moodukkwan.html">Moo Duk Kwan</a></li>
-      <li><a href="dojang.html" class="active">Dojang</a></li>
-      <li><a href="programas.html">Programas</a></li>
-      <li><a href="asociacion.html">Asociación</a></li>
-    </ul>
-  </nav>
+  <!-- Carga del menú unificado -->
+  <div id="menu-container"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        // Activar menú hamburguesa
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+  </script>
 
   <main>
     <section class="contenido">
@@ -31,14 +36,12 @@
     </section>
   </main>
 
- <script src="scripts/dojang.js"></script>
+  <script src="scripts/dojang.js"></script>
 
-<!-- Footer -->
+  <!-- Footer -->
   <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm mt-auto">
     Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – © World Moo Duk Kwan.
   </footer> 
-
- 
 
 </body>
 </html>

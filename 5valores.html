@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Valores del Moo Duk Kwan</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script> <!-- necesario para tailwind -->
+
   <style>
     .valores-container {
       display: flex;
@@ -38,7 +40,6 @@
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     }
 
-    /* Responsive (ya que aplicamos scale, esto ayuda si se necesita ajustar más tarde) */
     @media (max-width: 768px) {
       .valor {
         max-width: 48%;
@@ -63,24 +64,27 @@
       color: #002244;
     }
   </style>
-
-     <nav class="menu">
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="5valores.html" class="active">Valores Moo do</a></li>
-      <li><a href="moodukkwan.html">Moo Duk Kwan</a></li>
-      <li><a href="dojang.html">Dojang</a></li>
-      <li><a href="programas.html">Programas</a></li>
-      <li><a href="asociacion.html">Asociación</a></li>
-    </ul>
-  </nav>
-
 </head>
-
 
 <body class="pagina-5valores">
 
- 
+  <!-- Menú unificado cargado desde menu.html -->
+  <div id="menu-container"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        // Activar menú hamburguesa
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+  </script>
 
   <main>
     <div class="valores-container">
@@ -90,34 +94,6 @@
       <a href="#filosofia" class="valor"><img src="Imagenes/5valores4.webp" alt="Filosofía"></a>
       <a href="#tecnica" class="valor"><img src="Imagenes/5valores5.webp" alt="Técnica"></a>
     </div>
-
-    <!-- Secciones informativas 
-    <section id="historia">
-      <h2>Historia (Yuk Sa)</h2>
-      <p>Contenido sobre la historia del arte marcial...</p>
-    </section>
-
-    <section id="tradicion">
-      <h2>Tradición (Jun Tong)</h2>
-      <p>Contenido sobre la tradición y su transmisión...</p>
-    </section>
-
-    <section id="disciplina">
-      <h2>Disciplina / Respeto (Jon Kyung)</h2>
-      <p>Contenido sobre los valores de disciplina y respeto...</p>
-    </section>
-
-    <section id="filosofia">
-      <h2>Filosofía (Chul Hak)</h2>
-      <p>Contenido sobre la filosofía del Moo Duk Kwan...</p>
-    </section>
-
-    <section id="tecnica">
-      <h2>Técnica (Ki Sool)</h2>
-      <p>Contenido sobre la técnica y su desarrollo...</p>
-    </section>
-    -->
-
   </main>
 
   <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm mt-auto">

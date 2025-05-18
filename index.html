@@ -7,7 +7,9 @@
   <meta name="description" content="Sitio oficial de la Asociación Argentina de Soo Bahk Do - Moo Duk Kwan. Arte marcial tradicional coreano con historia y valores." />
   <meta name="keywords" content="Soo Bahk Do, Moo Duk Kwan, Argentina, arte marcial, dojang, valores, Corea" />
   <link rel="icon" href="Imagenes/LogoPin.webp" type="image/webp" />
+  <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     /* Animación para la alerta */
     @keyframes slideDown {
@@ -17,42 +19,31 @@
     .animate-slideDown {
       animation: slideDown 0.5s ease forwards;
     }
-    /* Para que footer esté al pie en pantallas grandes */
     body, html {
       height: 100%;
     }
   </style>
 </head>
+
 <body class="bg-blue-950 text-white min-h-screen bg-cover bg-center flex flex-col"
       style="background-color: #0c1a3c; background-image: url('Imagenes/fondoAncestral.webp')">
 
-  <!-- Navbar sticky -->
-  <nav class="bg-blue-900 bg-opacity-80 backdrop-blur-md p-4 z-50 sticky top-0 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold text-white">Soo Bahk Do - Moo Duk Kwan - Argentina</h1>
-
-      <!-- Menú Desktop -->
-      <ul class="hidden md:flex space-x-6 text-white font-semibold">
-        <li><a href="5valores.html" class="hover:text-red-600">Valores Moo Do</a></li>
-        <li><a href="#moo" class="hover:text-red-600">Moo Duk Kwan</a></li>
-        <li><a href="dojang.html" class="hover:text-red-600">Dojang</a></li>
-        <li><a href="#programas" class="hover:text-red-600">Programas</a></li>
-        <li><a href="https://www.sbdactivo.com/" target="_blank" class="hover:text-red-600">Asociación Argentina</a></li>
-      </ul>
-
-      <!-- Botón móvil -->
-      <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none" aria-label="Abrir menú">☰</button>
-    </div>
-
-    <!-- Menú Móvil -->
-    <ul id="mobile-menu" class="md:hidden hidden flex-col space-y-2 mt-4 text-white font-semibold">
-      <li><a href="5valores.html" class="hover:text-red-600">Valores Moo Do</a></li>
-      <li><a href="#moo" class="hover:text-red-600 block">Moo Duk Kwan</a></li>
-      <li><a href="dojang.html" class="hover:text-red-600 block">Dojang</a></li>
-      <li><a href="#programas" class="hover:text-red-600 block">Programas</a></li>
-       <li><a href="https://www.sbdactivo.com/" target="_blank" class="hover:text-red-600 block">Asociación Argentina</a></li>
-    </ul>
-  </nav>
+  <!-- Menú unificado desde archivo externo -->
+  <div id="menu-container"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+  </script>
 
   <!-- Sección superior con logo y bloque lateral -->
   <section class="mt-8 py-8 px-4">
@@ -88,25 +79,24 @@
           </a>
         </div>
       </div>
-
     </div>
   </section>
 
- <!-- ALERTA SITIO EN CONSTRUCCIÓN (debajo de bienvenida) -->
-<section class="container mx-auto mt-6 px-4">
-  <div id="alerta-construccion" class="bg-red-600 bg-opacity-90 text-white px-6 py-4 rounded-xl shadow-lg max-w-xl mx-auto animate-slideDown relative">
-    <button id="cerrar-alerta" aria-label="Cerrar alerta" 
-            class="absolute top-2 right-2 text-white hover:text-gray-200 font-bold text-xl leading-none focus:outline-none">
-      &times;
-    </button>
-    <strong class="font-bold text-lg block mb-2">Sitio en construcción</strong>
-    <p>
-      Estamos trabajando para ofrecerte una experiencia completa sobre el arte marcial Soo Bahk Do y la Asociación Argentina. ¡Gracias por tu paciencia!
-    </p>
-  </div>
-</section>
+  <!-- ALERTA SITIO EN CONSTRUCCIÓN -->
+  <section class="container mx-auto mt-6 px-4">
+    <div id="alerta-construccion" class="bg-red-600 bg-opacity-90 text-white px-6 py-4 rounded-xl shadow-lg max-w-xl mx-auto animate-slideDown relative">
+      <button id="cerrar-alerta" aria-label="Cerrar alerta" 
+              class="absolute top-2 right-2 text-white hover:text-gray-200 font-bold text-xl leading-none focus:outline-none">
+        &times;
+      </button>
+      <strong class="font-bold text-lg block mb-2">Sitio en construcción</strong>
+      <p>
+        Estamos trabajando para ofrecerte una experiencia completa sobre el arte marcial Soo Bahk Do y la Asociación Argentina. ¡Gracias por tu paciencia!
+      </p>
+    </div>
+  </section>
 
-  <!-- Secciones para navegación futura -->
+  <!-- Secciones placeholder -->
   <section id="moo" class="py-10 px-6"></section>
   <section id="dojang" class="py-10 px-6"></section>
   <section id="programas" class="py-10 px-6"></section>
@@ -117,21 +107,14 @@
     Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – © World Moo Duk Kwan.
   </footer>
 
-  <!-- Script para menú móvil -->
+  <!-- Script para cerrar alerta -->
   <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+    const btnCerrar = document.getElementById('cerrar-alerta');
+    const alerta = document.getElementById('alerta-construccion');
+    btnCerrar.addEventListener('click', () => {
+      alerta.style.display = 'none';
     });
   </script>
-  <script>
-  const btnCerrar = document.getElementById('cerrar-alerta');
-  const alerta = document.getElementById('alerta-construccion');
 
-  btnCerrar.addEventListener('click', () => {
-    alerta.style.display = 'none';
-  });
-</script>
 </body>
 </html>
