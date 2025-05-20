@@ -1,6 +1,6 @@
 <!-- menu.html -->
 <nav class="bg-blue-900 bg-opacity-80 backdrop-blur-md p-4 z-50 sticky top-0 shadow-md">
-  <div class="container mx-auto flex justify-between items-center">
+  <div class="container mx-auto flex justify-between items-center relative">
     <h1 class="text-xl font-bold text-white">Soo Bahk Do - Moo Duk Kwan - Argentina</h1>
 
     <!-- Menú Desktop -->
@@ -9,7 +9,19 @@
       <li><a href="5valores.html" class="hover:text-red-600">Valores Moo Do</a></li>
       <li><a href="construccion.html" class="hover:text-red-600">Moo Duk Kwan</a></li>
       <li><a href="dojang.html" class="hover:text-red-600">Dojang</a></li>
-      <li><a href="construccion.html" class="hover:text-red-600">Programas</a></li>
+
+      <!-- Submenú funcional con group -->
+      <li class="relative group">
+        <a href="construccion.html" class="hover:text-red-600">Programas</a>
+        <ul class="absolute top-full left-0 mt-2 w-48 bg-blue-900 text-white rounded shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <li><a href="construccion.html" class="block px-4 py-2 hover:bg-blue-800 hover:text-red-600">TAC Nacional</a></li>
+          <li><a href="construccion.html" class="block px-4 py-2 hover:bg-blue-800 hover:text-red-600">World TAC</a></li>
+          <li><a href="construccion.html" class="block px-4 py-2 hover:bg-blue-800 hover:text-red-600">Jóvenes Líderes</a></li>
+          <li><a href="construccion.html" class="block px-4 py-2 hover:bg-blue-800 hover:text-red-600">Silver Moo Do In</a></li>
+          <li><a href="construccion.html" class="block px-4 py-2 hover:bg-blue-800 hover:text-red-600">Certificaciones</a></li>
+        </ul>
+      </li>
+
       <li><a href="https://www.sbdactivo.com/" target="_blank" class="hover:text-red-600">Asociación Argentina</a></li>
     </ul>
 
@@ -23,7 +35,18 @@
     <li><a href="5valores.html" class="hover:text-red-600">Valores Moo Do</a></li>
     <li><a href="construccion.html" class="hover:text-red-600">Moo Duk Kwan</a></li>
     <li><a href="dojang.html" class="hover:text-red-600">Dojang</a></li>
-    <li><a href="construccion.html" class="hover:text-red-600">Programas</a></li>
+    <li>
+      <details class="group">
+        <summary class="hover:text-red-600 cursor-pointer">Programas</summary>
+        <ul class="ml-4 mt-2 space-y-1">
+          <li><a href="construccion.html" class="block hover:text-red-600">TAC Nacional</a></li>
+          <li><a href="construccion.html" class="block hover:text-red-600">World TAC</a></li>
+          <li><a href="construccion.html" class="block hover:text-red-600">Jóvenes Líderes</a></li>
+          <li><a href="construccion.html" class="block hover:text-red-600">Silver Moo Do In</a></li>
+          <li><a href="construccion.html" class="block hover:text-red-600">Certificaciones</a></li>
+        </ul>
+      </details>
+    </li>
     <li><a href="https://www.sbdactivo.com/" target="_blank" class="hover:text-red-600">Asociación Argentina</a></li>
   </ul>
 
