@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eventos - Soo Bahk Do Argentina</title>
-  <link rel="stylesheet" href="estilos.css"/>
+  <link rel="stylesheet" href="estilos.css" />
   <style>
     .eventos-container {
       max-width: 1200px;
@@ -59,17 +59,8 @@
 </head>
 <body>
 
-  <!-- Encabezado: igual que en construccion.html -->
-  <header>
-    <div class="logo-redes">
-      <img src="imagenes/logo-mdk.png" alt="Logo" class="logo">
-      <div class="redes">
-        <a href="#"><img src="imagenes/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="imagenes/instagram.png" alt="Instagram"></a>
-      </div>
-    </div>
-   
-  </header>
+  <!-- Cargar menú desde menu.html -->
+  <div id="menu-container"></div>
 
   <main>
     <section class="eventos-container" id="eventos">
@@ -82,9 +73,18 @@
     <p>&copy; 2025 Soo Bahk Do Moo Duk Kwan Argentina</p>
   </footer>
 
-  <!-- Script para cargar eventos desde JSON -->
+  <!-- Script para insertar menu.html -->
   <script>
-    fetch('data/eventos.json')
+    fetch("menu.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("menu-container").innerHTML = data;
+      });
+  </script>
+
+  <!-- Script para cargar los eventos -->
+  <script>
+    fetch('data/eventos/eventos.json')
       .then(response => response.json())
       .then(eventos => {
         const contenedor = document.getElementById('eventos');
