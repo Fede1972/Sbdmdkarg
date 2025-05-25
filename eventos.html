@@ -57,10 +57,25 @@
     }
   </style>
 </head>
-<body>
+<body class="pagina-dojang">
 
-  <!-- Cargar menú desde menu.html -->
+  <!-- Carga del menú unificado -->
   <div id="menu-container"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        // Activar menú hamburguesa
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+  </script>
 
   <main>
     <section class="eventos-container" id="eventos">
@@ -70,14 +85,6 @@
 
 
 
-  <!-- Script para insertar menu.html -->
-  <script>
-    fetch("menu.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("menu-container").innerHTML = data;
-      });
-  </script>
 
   <!-- Script para cargar los eventos -->
   <script>
