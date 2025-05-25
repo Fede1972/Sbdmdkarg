@@ -1,0 +1,20 @@
+[
+  {
+    "titulo": "Seminario Nacional 2025",
+    "fecha": "15 de marzo de 2025",
+    "descripcion": "Una jornada intensiva para todos los cinturones, con maestros invitados del exterior.",
+    "imagen": "evento1.jpg"
+  },
+  {
+    "titulo": "Torneo Regional Buenos Aires",
+    "fecha": "10 de junio de 2025",
+    "descripcion": "Competencia regional de formas, combate y técnicas. Abierto a todas las edades.",
+    "imagen": "evento2.jpg"
+  },
+  {
+    "titulo": "Clase especial con el Sabom Federico",
+    "fecha": "22 de julio de 2025",
+    "descripcion": "Clase técnica centrada en patadas giratorias y defensas tradicionales. Nivel intermedio-avanzado.",
+    "imagen": "evento3.jpg"
+  }
+]
