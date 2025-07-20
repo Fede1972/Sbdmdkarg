@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jóvenes Líderes Argentina</title>
+  <link rel="icon" href="Imagenes/LogoPin.webp" type="image/webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="canonical" href="https://www.worldmoodukkwan.ar/jovenes.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body class="bg-blue-950 text-white min-h-screen bg-cover bg-center flex flex-col items-center justify-start pt-20"
+      style="background-image: url('Imagenes/fondoAncestral.webp'); background-color: #0c1a3c;">
+
+  <!-- Menú unificado -->
+  <div id="menu-container" class="w-full fixed top-0 z-50"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+  </script>
+
+  <!-- Sección principal -->
+  <section class="w-full max-w-4xl px-4 py-10 bg-blue-900 bg-opacity-40 backdrop-blur-md rounded-lg shadow-xl mt-4 animate-fadeIn">
+
+    <h1 class="text-4xl font-bold text-center text-red-700 mb-8">Youth Leaders Program</h1>
+    <h1 class="text-4xl font-bold text-center text-red-700 mb-8">Programa Jóvenes Líderes</h1>
+    
+    <article class="space-y-6 text-left text-black">
+
+      <p class="bg-white bg-opacity-70 backdrop-blur-sm p-6 rounded-lg shadow-lg transition duration-300 hover:bg-opacity-80">
+        El programa Jóvenes Líderes fue creado con una visión clara: formar líderes comprometidos con la filosofía del Moo Duk Kwan y asegurar la longevidad del arte para las próximas generaciones. No se trata únicamente de perfeccionar técnicas físicas, sino de cultivar el carácter, el servicio, la responsabilidad y la capacidad de inspirar a otros. Los participantes de este programa no solo entrenan, sino que también se involucran activamente en el apoyo a sus dojangs, la difusión del arte y la transmisión de sus valores.
+      </p>
+
+      <div class="bg-white bg-opacity-70 backdrop-blur-sm p-6 rounded-lg shadow-lg transition duration-300 hover:bg-opacity-80">
+        <h2 class="text-xl font-semibold text-blue-900 mb-2">Objetivos fundamentales</h2>
+        <ol class="list-decimal list-inside space-y-2">
+          <li>Preservar Moo Duk Kwan tal como fue creado por nuestro fundador Hwang Kee.</li>
+          <li>Fortalecer y promover la identidad de Moo Duk Kwan, tanto en las redes sociales como en nuestra vida diaria.</li>
+          <li>Alentar y fortalecer las relaciones internacionales entre los jóvenes, para apoyar el desarrollo global del Moo Duk Kwan.</li>
+          <li>Promover la longevidad del Moo Duk Kwan apoyando y empoderando a los líderes del mañana.</li>
+        </ol>
+      </div>
+
+      <p class="bg-white bg-opacity-70 backdrop-blur-sm p-6 rounded-lg shadow-lg transition duration-300 hover:bg-opacity-80">
+        Cada una de estas metas apunta a garantizar que nuestro arte no solo perdure en el tiempo, sino que se mantenga fiel a sus raíces, creciendo con fuerza en nuevas generaciones alrededor del mundo. En estos tiempos, donde el compromiso a largo plazo es cada vez más raro, este programa busca generar una base sólida de practicantes que entiendan la profundidad del Soo Bahk Do y lo lleven adelante con integridad, respeto y pasión. Estamos trabajando para revitalizar el programa, abrir nuevos espacios de participación y generar proyectos que reflejen la voz y energía de nuestros jóvenes.
+      </p>
+
+      <p class="bg-white bg-opacity-70 backdrop-blur-sm p-6 rounded-lg shadow-lg transition duration-300 hover:bg-opacity-80">
+        Invitamos a todos los que deseen sumar su aporte ya sea como practicantes, instructores o colaboradores a formar parte de este programa. Porque el futuro del Moo Duk Kwan se construye hoy, con líderes comprometidos y con visión.
+      </p>
+
+      <div class="flex justify-center">
+        <div class="bg-white bg-opacity-0 p-2 rounded-lg">
+          <img src="Imagenes/Logo YL.png" alt="Logo del programa Jóvenes Líderes" class="max-w-xs  opacity-100">
+        </div>
+      </div>
+
+      <!-- Íconos de redes sociales -->
+      <div class="flex justify-center gap-6 mt-6">
+        <a href="https://www.facebook.com/joveneslideresArg" target="_blank" aria-label="Facebook">
+          <img src="Imagenes/logo-facebook.png" alt="Facebook" class="w-16 h-16 hover:scale-110 transition">
+        </a>
+        <a href="https://www.instagram.com/joveneslideresarg1" target="_blank" aria-label="Instagram">
+          <img src="Imagenes/logo-instagram.png" alt="Instagram" class="w-16 h-16 hover:scale-110 transition">
+        </a>
+      </div>
+
+      <!-- Bloques informativos -->
+      <div class="grid md:grid-cols-2 gap-6 text-left">
+        <div class="bg-white bg-opacity-70 backdrop-blur-sm p-6 rounded-lg shadow-lg transition duration-300 hover:bg-opacity-80">
+          <h2 class="text-xl font-semibold text-blue-900 mb-2">¿Qué es el programa?</h2>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Iniciativa internacional del Moo Duk Kwan</li>
+            <li>Formación de líderes comprometidos con la filosofía del arte</li>
+            <li>Participación activa en eventos, difusión y apoyo al dojang</li>
+          </ul>
+        </div>
+
+        <div class="bg-white bg-opacity-70 backdrop-blur-sm p-6 rounded-lg shadow-lg transition duration-300 hover:bg-opacity-80">
+          <h2 class="text-xl font-semibold text-blue-900 mb-2">¿Por qué es importante?</h2>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Fomenta el compromiso y la continuidad generacional</li>
+            <li>Inspira a los jóvenes a liderar desde el ejemplo</li>
+            <li>Fortalece la conexión global de Moo Duk Kwan</li>
+          </ul>
+        </div>
+
+        <div class="bg-white bg-opacity-70 backdrop-blur-sm p-6 rounded-lg shadow-lg transition duration-300 hover:bg-opacity-80">
+          <h2 class="text-xl font-semibold text-blue-900 mb-2">¿Cómo participar?</h2>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Contactá a tu instructor o representante del programa</li>
+            <li>Sumate a los proyectos, entrenamientos y encuentros</li>
+          </ul>
+        </div>
+
+        <div class="bg-white bg-opacity-70 backdrop-blur-sm p-6 rounded-lg shadow-lg transition duration-300 hover:bg-opacity-80">
+          <h2 class="text-xl font-semibold text-blue-900 mb-2">Símbolos del programa</h2>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Representan las metas y valores</li>
+            <li>Refuerzan el sentido de identidad entre jóvenes líderes</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm w-full mt-10">
+    Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – © World Moo Duk Kwan.
+  </footer>
+
+</body>
+</html>

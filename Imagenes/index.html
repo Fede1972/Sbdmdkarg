@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soo Bahk Do Argentina | Moo Duk Kwan | Arte Marcial Tradicional Coreano</title
+  <link rel="canonical" href="https://www.worldmoodukkwan.ar/">
+  <meta name="description" content="Conocé el arte marcial tradicional coreano Soo Bahk Do. Información sobre Moo Duk Kwan, dojangs en Argentina, valores y programas de entrenamiento." />
+  <meta name="keywords" content="Soo Bahk Do, Tang Soo Do, Tang Su Do, Moo Duk Kwan, Argentina, arte marcial coreano, dojang, valores, historia" />
+  <link rel="icon" href="Imagenes/LogoPin.webp" type="image/webp" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-950 text-white min-h-screen flex flex-col">
+
+  <!-- Menú -->
+  <div id="menu-container"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+  </script>
+
+  <!-- Contenido con fondo -->
+  <section class="bg-cover bg-center" style="background-image: url('Imagenes/fondoAncestral.webp')">
+    <div class="py-8 px-4">
+      <div class="container mx-auto flex flex-col md:flex-row md:items-start md:space-x-6">
+
+        <!-- Columna central -->
+        <div class="flex flex-col space-y-8 md:flex-1">
+
+          <!-- Bienvenido -->
+          <div class="bg-blue-900 bg-opacity-70 p-4 rounded-xl shadow-lg max-w-md w-full flex flex-col space-y-4 transition duration-300 ease-in-out transform hover:scale-105">
+            <div class="flex items-start space-x-4">
+              <img src="Imagenes/LogoWMDKARG.webp" alt="Logo Soo Bahk Do Argentina" class="w-auto h-40 object-contain shadow-lg rounded" loading="lazy" />
+              <div>
+                <h3 class="text-lg font-bold text-red-200 mb-2">BIENVENIDO</h3>
+                <p> Sitio oficial en Argentina, de nuestro arte tradicional coreano <strong>Soo Bahk Do</strong>, bajo la filosofía y valores del <strong>Moo Duk Kwan</strong>.  </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Internacional -->
+          <div class="bg-blue-900 bg-opacity-70 p-4 rounded-xl shadow-lg max-w-md w-full flex flex-col space-y-4 transition duration-300 ease-in-out transform hover:scale-105">
+            <div class="flex items-start space-x-4">
+              <img src="Imagenes/Maestros.webp" alt="Maestros fundadores del Moo Duk Kwan" class="w-40 h-40 object-contain shadow-lg rounded" loading="lazy" />
+              <div>
+                <h3 class="text-lg font-bold text-red-200 mb-2">Moo Duk Kwan</h3>
+                <p class="text-sm">Sitio oficial Internacional</p>
+                <p class="text-sm">Escuela <strong>Moo Duk Kwan</strong></p>
+                <a href="https://worldmoodukkwan.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-red-700 text-white px-4 py-2 mt-4 rounded-lg text-center hover:bg-red-600">worldmoodukkwan</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Digital BU -->
+          <div class="bg-blue-900 bg-opacity-70 p-4 rounded-xl shadow-lg max-w-md w-full flex flex-col space-y-4 transition duration-300 ease-in-out transform hover:scale-105">
+            <div class="flex items-start space-x-4">
+              <img src="Imagenes/logoDBu.webp" alt="Logo Digital BU Argentina" class="w-40 h-auto object-contain shadow-lg rounded opacity-70" loading="lazy" />
+              <div>
+                <h3 class="text-lg font-bold text-red-200 mb-2">Digital Bu Argentina</h3>
+                <p class="text-sm">Parte del TAC Nacional Argentina</p>
+                <p class="text-sm">Administrador de Sitio Web</p>
+                <div class="mt-2 flex items-center space-x-4">
+                  <a href="https://www.facebook.com/share/1RngkPEWVx/" target="_blank" class="hover:text-red-500" aria-label="Facebook">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2v-2c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.8h2.3l-.4 3h-1.9v7A10 10 0 0022 12z"/></svg>
+                  </a>
+                  <a href="https://www.instagram.com/digital.bu.arg" target="_blank" class="hover:text-red-500" aria-label="Instagram">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M7 2C4.8 2 3 3.8 3 6v12c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4V6c0-2.2-1.8-4-4-4H7zm10 2c1.1 0 2 .9 2 2v2h-2V4zm-5 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/></svg>
+                  </a>
+                  <a href="mailto:digitalbuarg@gmail.com" class="hover:text-red-500" aria-label="Enviar correo">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v16h16V4H4zm8 9L4 6h16l-8 7z"/></svg>
+                  </a>
+                  <a href="DigitalBu.html" target="_blank" rel="noopener noreferrer" class="inline-block bg-red-700 text-white px-4 py-2 mt-4 rounded-lg text-center hover:bg-red-600">Digital Bu</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Carrusel -->
+        <div class="flex-shrink-0 mt-8 md:mt-0 w-full sm:w-[320px]">
+          <div class="rounded-xl overflow-hidden shadow-lg bg-blue-900 bg-opacity-70 flex justify-center py-6 px-4">
+            <img id="carrusel" src="data/inicio/1.png" alt="Galería de imágenes de Soo Bahk Do en Argentina" class="object-contain transition-opacity duration-700 w-full h-auto opacity-100" loading="lazy" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm mt-auto">
+    Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – World Moo Duk Kwan© 
+  </footer>
+
+  <!-- Script Carrusel -->
+  <script>
+    const imagenes = [
+      "data/inicio/1.png",
+      "data/inicio/2.png",
+      "data/inicio/3.png",
+      "data/inicio/4.png",
+      "data/inicio/5.png",
+      "data/inicio/6.png"
+    ];
+    let indice = 0;
+    const carrusel = document.getElementById("carrusel");
+
+    // Pre-carga de imágenes
+    imagenes.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+
+    setInterval(() => {
+      carrusel.style.opacity = 0;
+      setTimeout(() => {
+        indice = (indice + 1) % imagenes.length;
+        carrusel.src = imagenes[indice];
+        carrusel.style.opacity = 1;
+      }, 700);
+    }, 4000);
+
+    // Año actual
+  
+  </script>
+
+
+<!-- Ventana flotante de noticias -->
+<div id="noticias-flotante" class="fixed bottom-4 right-4 max-w-sm bg-white text-black p-4 rounded-xl shadow-lg z-50 transition transform scale-100">
+  <div class="flex justify-between items-center mb-2">
+    <h3 class="font-bold text-blue-900">Últimas noticias</h3>
+    <button onclick="document.getElementById('noticias-flotante').style.display='none'" class="text-red-600 hover:text-red-800 text-xl font-bold leading-none">&times;</button>
+  </div>
+  <div id="contenido-noticias" class="text-sm space-y-2">
+    <p>Cargando noticias...</p>
+  </div>
+</div>
+
+<script>
+  // Cargar noticias desde un archivo de texto
+  fetch("data/inicio/noticias.txt")
+    .then(res => res.text())
+    .then(texto => {
+      const contenedor = document.getElementById("contenido-noticias");
+      contenedor.innerHTML = "";
+      texto.trim().split("\n").forEach(linea => {
+        const p = document.createElement("p");
+        // Detecta links y los convierte en clicables
+        const linkRegex = /(https?:\/\/[^\s]+)/g;
+        const partes = linea.split(linkRegex);
+        partes.forEach(parte => {
+          if (parte.match(linkRegex)) {
+            const a = document.createElement("a");
+            a.href = parte;
+            a.textContent = parte;
+            a.target = "_blank";
+            a.className = "text-blue-700 underline hover:text-blue-900";
+            p.appendChild(a);
+          } else {
+            p.appendChild(document.createTextNode(parte));
+          }
+        });
+        contenedor.appendChild(p);
+      });
+    })
+    .catch(() => {
+      document.getElementById("contenido-noticias").innerHTML = "<p>No se pudieron cargar las noticias.</p>";
+    });
+</script>
+
+
+
+</body>
+</html>

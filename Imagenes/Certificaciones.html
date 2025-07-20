@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificaciones Internacionales</title>
+  <link rel="icon" href="Imagenes/LogoPin.webp" type="image/webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="canonical" href="https://www.worldmoodukkwan.ar/Certificaciones.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente Roboto desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    @keyframes slideDown {
+      0% { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .animate-slideDown {
+      animation: slideDown 0.5s ease forwards;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background-image: url('Imagenes/fondovalores.webp');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: repeat-y;
+      background-color: #0c1a3c;
+    }
+  </style>
+</head>
+
+<body class="bg-blue-950 text-white min-h-screen flex flex-col items-center justify-start">
+
+  <!-- Menú unificado -->
+  <div id="menu-container" class="w-full"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+  </script>
+
+  <main class="flex-grow w-full px-4 py-12">
+
+    <!-- Sección con imagen y texto -->
+    <section class="flex flex-col md:flex-row items-center justify-center gap-6">
+
+      <!-- Imagen -->
+      <div class="w-full md:w-1/2 flex justify-center">
+        <img src="Imagenes/certificaciones.webp" alt="Ilustración de certificaciones internacionales de Soo Bahk Do Moo Duk Kwan" class="max-w-full h-auto rounded-lg shadow-lg" />
+      </div>
+
+      <!-- Texto -->
+      <div class="w-full md:w-1/2 text-white text-lg leading-relaxed bg-blue-900 bg-opacity-60 p-1 rounded-lg animate-slideDown">
+
+        <h2 class="text-2xl font-bold mb-2">Jo Kyo</h2>
+        <p class="mb-6">Asistente de Instructor.<br>Cinto Rojo y mayores de 10 años.</p>
+
+        <h2 class="text-2xl font-bold mb-2">Kyo Sa</h2>
+        <p class="mb-6">Instructor.<br>1er a 3er Dan y 18 años en adelante.</p>
+
+        <h2 class="text-2xl font-bold mb-2">Kyo Bom</h2>
+        <p class="mb-6">Miembro de Ko Dan Ja.<br>4 Dan en más y 21 años en más.</p>
+
+        <h2 class="text-2xl font-bold mb-2">Bu Sa Bom</h2>
+        <p class="mb-6">Sa Bom en entrenamiento.<br>4 Dan en más y 21 años en más (Certificado Kyo Sa).</p>
+
+        <h2 class="text-2xl font-bold mb-2">Sa Bom</h2>
+        <p class="mb-6">Maestro Internacional Certificado.<br>4 Dan en más y 25 años en más (Certificado Kyo Sa).</p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm w-full">
+    Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – © World Moo Duk Kwan.
+  </footer>
+
+</body>
+</html>

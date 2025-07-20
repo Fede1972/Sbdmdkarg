@@ -1,0 +1,20 @@
+[
+  {
+    "titulo": "Ko Dan Ja Shim Sa - Mendoza 2024",
+    "fecha": "19 al 26 de Diciembre 2024",
+    "descripcion": "Examen de Ko Dan Ja, Seminarios y Torneo Nacional. Celebración 50 años de Moo duk Kwan en Argentina",
+    "imagen": "evento1.jpg"
+  },
+  {
+    "titulo": "80 aniversario de Moo Duk Kwan",
+    "fecha": "20 y 21 de octubre 2025 - Lugar: Corea del sur",
+    "descripcion": "Celebracion oficial por aniversario de Moo duk Kwan, fundada el 9 de noviembre de 1945",
+    "imagen": "evento2.jpg"
+  },
+  {
+    "titulo": "Seminario y Ju Dan Ja Shim Sa",
+    "fecha": "7 y 8 de junio - Lugar: Mar de Plata",
+    "descripcion": "Seminarios de estantarizacion, Enttrega de nuevas graduaciones y Examen de Dan",
+    "imagen": "evento3.jpg"
+  }
+]

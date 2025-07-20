@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería - Soo Bahk Do Argentina</title>
+  <link rel="icon" href="Imagenes/LogoPin.webp" type="image/webp" />
+  <link rel="canonical" href="https://www.worldmoodukkwan.ar/GaleriaFotos.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #0c1a3c;
+      background-image: url('Imagenes/fondoAncestral.webp');
+      background-size: cover;
+      background-position: center;
+    }
+    .image-thumb {
+      transition: transform 0.2s ease;
+    }
+    .image-thumb:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 50;
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex flex-col">
+
+  <!-- Menú -->
+  <div id="menu-container" class="w-full"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+  </script>
+
+  <!-- Galería -->
+  <main class="p-4 flex-grow">
+    <h1 class="text-3xl text-center text-red-800 mb-6 font-bold">Galería de Fotos</h1>
+    
+    <!-- Filtro de subcarpetas -->
+    <div id="filtro" class="mb-6 text-center"></div>
+
+    <!-- Contenedor de imágenes -->
+    <div id="gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden" onclick="this.classList.add('hidden')">
+    <img id="lightbox-img" class="max-w-full max-h-full" />
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm">
+    Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – © World Moo Duk Kwan.
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const raiz = params.get("carpeta") || "Imagenes/Galerias"; // carpeta raíz por defecto
+
+    fetch(`leer_imagenes.php?raiz=${encodeURIComponent(raiz)}`)
+      .then(res => res.json())
+      .then(imagenes => {
+        const gallery = document.getElementById('gallery');
+        const filtro = document.getElementById('filtro');
+
+        const subcarpetas = [...new Set(imagenes.map(ruta => {
+          const partes = ruta.split('/');
+          return partes.length > 2 ? partes[2] : '';
+        }))].filter(c => c);
+
+        if (subcarpetas.length > 0) {
+          const select = document.createElement('select');
+          select.className = "text-black p-2 rounded";
+          select.innerHTML = `<option value="">Todas las subcarpetas</option>` +
+            subcarpetas.map(c => `<option value="${c}">${c}</option>`).join('');
+          select.onchange = () => mostrarImagenes(imagenes, select.value);
+          filtro.appendChild(select);
+        }
+
+        function mostrarImagenes(lista, subcarpeta) {
+          gallery.innerHTML = '';
+          lista.filter(ruta => !subcarpeta || ruta.includes(`/${subcarpeta}/`)).forEach(ruta => {
+            const img = document.createElement('img');
+            img.src = ruta;
+            img.alt = "Foto";
+            img.loading = "lazy";
+            img.className = "w-full rounded shadow-md image-thumb cursor-pointer";
+            img.onclick = () => {
+              document.getElementById('lightbox-img').src = ruta;
+              document.getElementById('lightbox').classList.remove('hidden');
+            };
+            const div = document.createElement('div');
+            div.appendChild(img);
+            gallery.appendChild(div);
+          });
+        }
+
+        mostrarImagenes(imagenes, "");
+      });
+  </script>
+</body>
+</html>

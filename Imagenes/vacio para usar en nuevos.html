@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TAC NACIONAL</title>
+  <link rel="icon" href="Imagenes/LogoPin.webp" type="image/webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente Roboto desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    @keyframes slideDown {
+      0% { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .animate-slideDown {
+      animation: slideDown 0.5s ease forwards;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background-image: url('Imagenes/fondoAncestral.webp'), url('Imagenes/fondoAncestral.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #0c1a3c;
+    }
+  </style>
+</head>
+
+<body class="bg-blue-950 text-white min-h-screen flex flex-col items-center justify-start">
+
+  <!-- Menú unificado -->
+  <div id="menu-container" class="w-full"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+  </script>
+
+  <!-- Contenido principal (vacío por ahora) -->
+  <main class="flex-grow w-full px-4 py-12">
+    <!-- Aquí podés agregar contenido cuando esté listo -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm w-full">
+    Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – © World Moo Duk Kwan.
+  </footer>
+
+</body>
+</html>

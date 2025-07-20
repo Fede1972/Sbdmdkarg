@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TAC INTERNACIONAL - WTAC</title>
+  <link rel="icon" href="Imagenes/LogoPin.webp" type="image/webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="canonical" href="https://www.worldmoodukkwan.ar/WTAC.html">  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente Roboto desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    @keyframes slideDown {
+      0% { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .animate-slideDown {
+      animation: slideDown 1s ease forwards;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background-image: url('Imagenes/Potrerillos.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #0c1a3c;
+    }
+
+    .responsive-object {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      height: auto;
+    }
+
+    @media (min-width: 768px) {
+      .responsive-object {
+        aspect-ratio: 16 / 9;
+      }
+    }
+
+    .pdf-container {
+      animation: slideDown 0.8s ease forwards;
+      animation-delay: 1s;
+    }
+  </style>
+</head>
+
+<body class="bg-blue-950 text-white min-h-screen flex flex-col items-center justify-start">
+
+  <!-- Menú unificado -->
+  <div id="menu-container" class="w-full"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+  </script>
+
+  <!-- Contenido principal -->
+  <main class="flex-grow w-full px-4 py-8 md:py-12">
+    <section id="WTAC" class="animate-slideDown max-w-6xl mx-auto bg-white bg-opacity-10 p-4 md:p-6 rounded-lg shadow-md">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-6 drop-shadow-lg">
+        Comité Asesor Técnico Internacional
+      </h2>
+
+      <!-- Vista previa PDF -->
+      <div class="pdf-container rounded-md overflow-hidden">
+        <object data="documentos/WTAC.pdf#toolbar=0" type="application/pdf" class="responsive-object w-full h-full">
+          <!-- Fallback para móviles -->
+          <div class="flex flex-col items-center justify-center h-full bg-blue-950 text-white p-4">
+            <p class="text-center text-sm md:text-base mb-4">
+              Tu dispositivo no puede mostrar el PDF directamente.<br />
+              Hacé clic abajo para descargar o abrirlo en otra app.
+            </p>
+            <a href="documentos/WTAC.pdf" target="_blank" rel="noopener" class="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded">
+              Ver o Descargar PDF
+            </a>
+          </div>
+        </object>
+      </div>
+
+      <!-- Botón adicional de descarga -->
+      <p class="text-center mt-6 text-sm">
+        <a href="documentos/WTAC.pdf" target="_blank" rel="noopener" class="text-blue-300 underline hover:text-blue-400">
+          Descargar PDF
+        </a>
+      </p>
+
+      <!-- Opcional: Miniatura como imagen -->
+      <!--
+      <div class="mt-6 text-center">
+        <a href="documentos/WTAC.pdf" target="_blank">
+          <img src="Imagenes/previewWTAC.jpg" alt="Vista previa del PDF WTAC" class="rounded-md shadow-lg mx-auto w-full max-w-md" />
+        </a>
+      </div>
+      -->
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm w-full">
+    Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – ©World Moo Duk Kwan.
+  </footer>
+
+</body>
+</html>

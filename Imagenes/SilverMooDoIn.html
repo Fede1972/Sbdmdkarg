@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silver Moo Do In</title>
+  <link rel="icon" href="Imagenes/LogoPin.webp" type="image/webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="canonical" href="https://www.worldmoodukkwan.ar/SilverMooDoIn.html">  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente Roboto desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    @keyframes slideDown {
+      0% { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .animate-slideDown {
+      animation: slideDown 0.5s ease forwards;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background-image: url('Imagenes/manzanoclaro.webp');
+      background-size: cover;
+      background-position: top;
+      background-repeat: repeat-y;
+      opacity: 0.95;            
+    }
+  </style>
+
+</head>
+
+<body class="bg-blue-950 text-white min-h-screen flex flex-col items-center justify-start">
+
+  <!-- Menú unificado -->
+  <div id="menu-container" class="w-full"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+  </script>
+
+
+<section class="max-w-4xl mx-auto p-6 text-white">
+  <h1 class="text-4xl font-bold text-center text-blue-200 mb-6">Programa Silver Moo Do In</h1>
+
+  <!-- Imagen de apertura (ilustrativa o institucional) -->
+  <div class="mb-8">
+    <img src="Imagenes/silvermoodoin-logo.webp" alt="Silver Moo Do In" class="w-[200px] rounded-xl shadow-lg">
+  </div>
+
+  <h2 class="text-2xl font-semibold text-blue-300 mb-2">Antecedentes</h2>
+  <p class="mb-6">
+    Durante los primeros años del Moo Duk Kwan, la mayoría de los practicantes tenían entre 15 y 35 años. 
+    El entrenamiento para esas edades se centraba principalmente en las exigencias físicas para satisfacer 
+    los deseos de sus edades naturales. Más de medio siglo después, hay un número cada vez mayor de practicantes mayores, 
+    así como de aquellos que ahora tienen limitaciones físicas debido a lesiones u otras causas.
+  </p>
+  <p class="mb-6">
+    Actualmente, el practicante mayor se enfrenta básicamente a una de dos opciones: continuar entrenando de manera incómoda
+    tanto física como espiritualmente (es decir, posiblemente incómodo por su desempeño en declive); o simplemente dejar de 
+    entrenar por completo.
+  </p>
+  <p class="mb-6">
+    Este programa está diseñado para ayudar a los miembros a continuar su formación mientras satisfacen sus necesidades en 
+    esta etapa de su vida, además, ayuda a mantener la conexión con sus compañeros a lo largo del Moo Duk Kwan.
+  </p>
+ 
+  <!-- Imagen sugerida: entrenamiento adaptado para adultos mayores -->
+  <div class="mb-8">
+    <img src="Imagenes/silvermoodoin-01.webp" alt="Entrenamiento adaptado" class="w-[225px] rounded-md shadow-md">
+  </div>
+
+  <h2 class="text-2xl font-semibold text-blue-300 mb-2">Declaración de Misión</h2>
+  <ul class="mb-6 space-y-1">
+    <li>1. Proporcionar longevidad a los practicantes maduros del Moo Duk Kwan a través del bienestar mental y físico.</li>
+    <li>2. Brindar apoyo y orientación a las generaciones más jóvenes del Moo Duk Kwan con el ejemplo.</li>
+    <li>3. Promover las relaciones humanas nacionales e internacionales a través de la participación activa en el Programa.</li>
+    <li>4. Preservar la cultura del Moo Duk Kwan tal como lo pretendía el fundador, Hwang Kee.</li>
+  </ul>
+
+ <p class="mb-6">
+    La inauguración del programa fue presentada el 27 de agosto de 2022 por Kwan Jang Nim y WTAC.
+ </p>
+
+
+  <h2 class="text-2xl font-semibold text-blue-300 mb-2">Elegibilidad</h2>
+  <p class="mb-6">
+    Los practicantes deben ser miembros en regla de la organización nacional World Moo Duk Kwan en el país de residencia.
+  </p>
+  <p class="mb-6">
+    Para participar, deben ser miembros de Ko Dan Ja o Yu Dan Ja que tengan 65 años o más. Además,
+    los miembros de Ko Dan Ja y Dan que tengan 55 años y dificultades físicas pueden participar en el 
+    programa con la aprobación de su instructor y la aprobación del enlace de zona.
+  </p>
+  <!-- Imagen sugerida: ceremonia o grupo Silver Moo Do In -->
+  <div class="mb-8">
+    <img src="Imagenes/SMDI Poster.webp" alt="SMDI Silver Moo Do In" class="w-[250px] w-full rounded-md shadow-md">
+  </div>
+
+  <h2 class="text-2xl font-semibold text-blue-300 mb-2">Plan de Estudios</h2>
+  <ul class="list-disc list-inside mb-6 space-y-1">
+    <li>Moon / Moo Pahl Dan Khum</li>
+    <li>Yuk Ro Hyung</li>
+    <li>Sip Dan Khum Hyung</li>
+    <li>Ejercicios en pareja de Sip Dan Khum</li>
+    <li>Ho Sin Sool / IL Soo Sik / Sam Soo Sik</li>
+    <li>Otro material de Soo Bahk Do que sirva de apoyo al programa o al practicante</li>
+  </ul>
+
+  <h2 class="text-2xl font-semibold text-blue-300 mb-2">Sesiones de Capacitación</h2>
+  <p class="mb-6">
+    Se realizan a través de Zoom y en persona en eventos nacionales y regionales, y a través del estudio de los instructores.
+  </p>
+  <p class="mb-6">
+    Nota: El programa no es obligatorio, sino un recurso adicional para los miembros de mayor edad. 
+    Los participantes de este grupo de edad también pueden continuar buscando avanzar en su rango y 
+    participar en todo el entrenamiento regular que consideren adecuado dentro de su alcance de capacidad 
+    con modificaciones para satisfacer sus necesidades.
+  </p>
+
+  <h2 class="text-2xl font-semibold text-blue-300 mb-2">Estructura Mundial</h2>
+  <p class="mb-6">
+    Las zonas 1/2/3/4 están supervisadas por un miembro del WTAC bajo la dirección del Kwan Jang Nim, 
+    y dentro de cada zona hay un enlace. Cada zona y país también puede tener un comité para supervisar 
+    las funciones nacionales, regionales y locales.
+  </p>
+  <ul class="list-disc list-inside mb-6 space-y-1">
+    <li>1. El programa es gratuito.</li>
+    <li>2. Los miembros pueden seguir participando en todas las clases regulares y también en el proceso de prueba.</li>
+    <li>3. Este programa ayuda a mejorar su entrenamiento en función de las necesidades físicas.</li>
+    <li>4. Hacemos una clase de Zoom una vez al mes, cada tercer sábado durante una hora. Luego, cada trimestre del año, 
+      WTAC realiza la clase.</li>
+    <li>5. Las clases se imparten en los Estados Unidos por uno de los miembros del TAC o uno de los miembros de nuestro
+       comité de programa. Tener uno de los miembros de nuestro comité como instructor de clase también ayuda a los 
+       participantes a sentirse en sintonía con las mismas cosas a las que se enfrentan.</li>
+    <li>6. El ritmo de las sesiones de la clase puede ser más lento y las técnicas se ajustan a los requisitos físicos de ellos.
+      Sin embargo, la estandarización de las técnicas es la misma que en el otro practicante. Uno de los desafíos de hacerlo en 
+      formato Zoom es que solo se pueden hacer ejercicios individuales. Los ejercicios en pareja son difíciles porque pueden ser
+      por sí solos.</li>
+    <li>7. Cada sesión comienza con un tema, un calentamiento y ejercicios de respiración. Luego siguen combinaciones de técnicas.</li>
+    <li>8. Las sesiones duran una hora y el entrenamiento dura aproximadamente 50 minutos para dejar tiempo para preguntas y respuestas.</li>
+    <li>9. Tiene que registrarse para el programa. Tendría que configurar algo para que se registren. Luego, se les puede enviar
+       el enlace a través del proceso de registro de su país o zona. No estoy muy seguro de cómo se hacen las clases de Zoom donde
+        se encuentran con otros países de su zona.</li>
+    <li>10. En cuanto a la autorización del miembro, primero debe consultar con su instructor. En segundo lugar, el enlace de la
+      Zona puede autorizarlo, o TAC o WTAC. Nunca hemos tenido que rechazar a nadie. En este momento es solo para KDJ y Dan
+      debido al material que se está presentando.</li>
+  </ul>
+ 
+
+</section>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm w-full">
+    Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – © World Moo Duk Kwan.
+  </footer>
+
+</body>
+</html>

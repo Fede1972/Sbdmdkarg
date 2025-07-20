@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventos - Soo Bahk Do Argentina</title>
+  <link rel="icon" href="Imagenes/LogoPin.webp" type="image/webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="canonical" href="https://www.worldmoodukkwan.ar/eventos.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-950 text-white min-h-screen bg-cover bg-center"
+      style="background-image: url('Imagenes/fondoAncestral.webp'); background-color: #0c1a3c;">
+
+  <!-- Menú fijo superior -->
+  <div id="menu-container" class="w-full fixed top-0 z-50"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+  </script>
+
+  <!-- Contenido principal -->
+  <div id="eventos" class="w-full max-w-6xl px-4 pt-28 py-8 space-y-8">
+    <!-- Eventos se cargan aquí -->
+  </div>
+
+  <!-- Script para cargar eventos -->
+  <script>
+    fetch("data/eventos/eventos.json")
+      .then(res => res.json())
+      .then(eventos => {
+        const contenedor = document.getElementById("eventos");
+
+        if (eventos.length === 0) {
+          contenedor.innerHTML = "<p class='text-center text-white'>No hay eventos disponibles por el momento.</p>";
+          return;
+        }
+
+        eventos.forEach(evento => {
+          const div = document.createElement("div");
+          div.className = "flex flex-col md:flex-row bg-white/30 rounded-xl overflow-hidden shadow-md backdrop-blur-lg";
+          div.innerHTML = `
+            <img src="data/eventos/${evento.imagen}" alt="${evento.titulo}" loading="lazy"
+                 class="w-full md:w-1/3 object-cover h-40 md:h-40">
+            <div class="p-4 flex flex-col justify-center">
+              <h3 class="text-2xl font-semibold mb-2 text-red-600">${evento.titulo}</h3>
+              <p class="text-sm mb-1 text-blue-950"><strong>Fecha:</strong> ${evento.fecha}</p>
+              <p class="text-blue-950">${evento.descripcion}</p>
+            </div>
+          `;
+          contenedor.appendChild(div);
+        });
+      })
+      .catch(err => {
+        console.error("Error al cargar eventos:", err);
+        document.getElementById("eventos").innerHTML = "<p class='text-center text-red-400'>Error al cargar los eventos.</p>";
+      });
+  </script>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm w-full mt-10">
+    Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – © World Moo Duk Kwan.
+  </footer>
+
+</body>
+</html>
