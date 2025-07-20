@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TAC Nacional Argentina</title>
+  <link rel="icon" href="Imagenes/LogoPin.webp" type="image/webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="canonical" href="https://www.worldmoodukkwan.ar/ntac.html">  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes slideDown {
+      0% { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .animate-slideDown {
+      animation: slideDown 0.5s ease forwards;
+    }
+    body, html {
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body class="bg-blue-950 text-white min-h-screen bg-cover bg-center flex flex-col items-center justify-start"
+      style="background-image: url('Imagenes/fondoAncestral.webp'); background-color: #0c1a3c;">
+
+   <!-- Menú unificado -->
+  <div id="menu-container" class="w-full"></div>
+    <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("menu-container").innerHTML = html;
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+    </script>
+
+
+
+
+  <!-- Sección TAC NACIONAL -->
+  <section class="w-full bg-blue-900 bg-opacity-50 py-8 px-4 flex flex-col items-center animate-slideDown">
+   <h2 class="text-3xl font-bold text-red-600 mb-4 text-center bg-blue-900 p-4 rounded-md">
+      TAC Nacional Argentina
+    </h2>
+    <p class="text-base text-black max-w-2xl text-center mb-6 bg-white bg-opacity-50 p-4 rounded shadow-md">
+        La Organización Mundial Moo Duk Kwan coordina y supervisa la práctica del arte marcial tradicional Soo Bahk Do en todo el mundo, asegurando la preservación de sus valores, técnicas y filosofía conforme a las enseñanzas del fundador Hwang Kee.
+    </p>
+    <img src="Imagenes/ORGWMDK/OrgWMDK_NTAC.png" alt="Organización TAC Nacional" class="w-full max-w-2xl rounded shadow-lg">
+  </section>
+
+  <!-- Botones de acceso rápido -->
+<div class="w-full bg-blue-900 bg-opacity-40 py-4 flex flex-wrap justify-center gap-4 animate-slideDown">
+  <a href="#chairman" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded shadow transition duration-300">Chairman</a>
+  <a href="#shimgungbu" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded shadow transition duration-300">Shim Gung Bu</a>
+  <a href="#nehgungbu" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded shadow transition duration-300">Neh Gung Bu</a>
+  <a href="#wehgungbu" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded shadow transition duration-300">Weh Gung Bu</a>
+  <a href="#tacassistant" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded shadow transition duration-300">TAC Assistant</a>
+  <a href="#digitalbu" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded shadow transition duration-300">Digital Bu</a>
+  <a href="#designado" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded shadow transition duration-300">Designado</a>
+</div>
+
+  <!-- Sección Chairman -->
+    <section id="chairman" class="w-full bg-blue-900 bg-opacity-50 py-8 px-4 flex flex-col items-center animate-slideDown">
+   <h2 class="text-3xl font-bold text-red-600 mb-4 text-center bg-blue-900 p-4 rounded-md">
+      TAC Nacional - Chairman
+   </h2>
+    <div class="bg-white bg-opacity-50 text-black max-w-2xl mx-auto p-6 rounded shadow-md text-justify">
+      <h2 class="text-2xl font-bold text-center mb-4">Presidente TAC Nacional</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Nombrado por Kwan Jang Nim. Limitado a actividades relacionadas con Moo Do (no a la Junta Directiva ni a la Organización).</li>
+        <li>Entregar la enseñanza y educación de Moo Do a los miembros en nombre de Kwan Jang Nim.</li>
+        <li>Defender la identidad de Moo Duk Kwan basada en los cinco valores Moo Do.</li>
+        <li>Realizar Dan Shim Sa y hacer recomendaciones a Kwan Jang Nim en relación con los exámenes.</li>
+        <li>Trabajar con el liderazgo organizacional para garantizar que se completen todas las responsabilidades relacionadas con el WMDK TAC.</li>
+        <li>Proporcionar un Calendario de Eventos TAC anual para el próximo año a World Moo Duk Kwan.</li>
+        <li>Recomendar a los miembros que ascienden a Dan a través de eventos aprobados de Dan Shim Sa.</li>
+        <li>Asistir a las funciones del TAC requeridas por el World Moo Duk Kwan.</li>
+        <li>Organizar, presentar y asistir a clínicas y seminarios patrocinados por TAC basados en los cinco valores Moo Do.</li>
+        <li>Supervisar publicaciones y otras comunicaciones (boletines, artículos de revistas, contenidos de videos, etc.).</li>
+        <li>Organizar y conducir campeonatos nacionales, seminarios u oportunidades educativas para instructores y miembros.</li>
+        <li>Hacer recomendaciones a Kwan Jang Nim para nombramientos de posibles miembros del TAC.</li>
+        <li>Trabajar como un comité, no como un individuo.</li>
+        <li>Nombrar examinadores regionales según sea necesario.</li>
+        <li>A cargo de: Francisco Rafael Blotta SBN</li>
+      </ul>
+      <!-- Contenedor de imágenes -->
+      <div class="w-full lg:w-1/3 flex flex-col gap-4">
+        <img src="Imagenes/ORGWMDK/ChairMan.webp" class="rounded shadow-md hidden max-w-[200px] w-full mx-auto" onload="this.classList.remove('hidden')">
+        <img src="Imagenes/ORGWMDK/nombre2.webp" class="rounded shadow-md hidden" onload="this.classList.remove('hidden')">
+        <img src="Imagenes/ORGWMDK/nombre3.webp" class="rounded shadow-md hidden" onload="this.classList.remove('hidden')">
+      </div>
+    </section>
+
+
+    <!-- Sección Shim Gung Bu -->
+      <section id="shimgungbu" class="w-full bg-blue-900 bg-opacity-50 py-8 px-4 flex flex-col items-center animate-slideDown">
+    <h2 class="text-3xl font-bold text-red-600 mb-4 text-center bg-blue-900 p-4 rounded-md">
+      SHIM GUNG BU: (Energía Mental o espiritual)
+    </h2>
+      <div class="bg-white bg-opacity-50 text-black max-w-2xl mx-auto p-6 rounded shadow-md text-justify">
+        <ul class="list-disc list-inside space-y-2">
+          <li>MISION: HAENG JUNG BU “Mantener Unido a MDK”</li>
+          <li>Estandarización del protocolo y de la etiqueta.</li>
+          <li>Aplicación de la Filosofía Moo Do. Por ejemplo: correcto contacto de ojos, concentración, conocimiento de usted mismo y del medio.</li>
+          <li>Comprensión de YONG GI‐ IN NEH ‐ HIM CHO CHUNG ‐ CHUNG JIK ‐ KYUM SON.</li>
+          <li>ONG SOOK: desarrollar el espíritu de paz interior en la Escuela.</li>
+          <li>Desarrollo de la fortaleza espiritual y mental. “La disciplina va más allá de su deseo personal”.</li>
+          <li>Desarrollar seminarios y/o cursos sobre estos temas.</li>
+          <li>A cargo de: Natalia Blotta SBN y Fabian Dominguez SBN</li>
+        </ul>
+      
+        <!-- Contenedor de imágenes: horizontal en PC, vertical en móvil -->
+        <div class="w-full flex flex-col lg:flex-row justify-center items-center gap-4 mt-4">
+          <img src="Imagenes/ORGWMDK/nataliablotta.webp"
+          class="hidden rounded shadow-md w-[150px] h-[200px] object-cover"
+          onload="this.classList.remove('hidden')">
+
+          <img src="Imagenes/ORGWMDK/FabianFernandez.webp"
+          class="hidden rounded shadow-md w-[150px] h-[200px] object-cover"
+          onload="this.classList.remove('hidden')">
+
+          <img src="Imagenes/ORGWMDK/nombre3.webp"
+          class="hidden rounded shadow-md w-[150px] h-[200px] object-cover"
+          onload="this.classList.remove('hidden')">
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Sección NEH GUNG BU  -->
+    <section id="nehgungbu" class="w-full bg-blue-900 bg-opacity-50 py-8 px-4 flex flex-col items-center animate-slideDown">
+    <h2 class="text-3xl font-bold text-red-600 mb-4 text-center bg-blue-900 p-4 rounded-md">
+        NEH GUNG BU: (Energía Interna)
+      </h2>
+      <div class="bg-white bg-opacity-50 text-black max-w-2xl mx-auto p-6 rounded shadow-md text-justify">
+
+        <ul class="list-disc list-inside space-y-2">
+         <li>MISION: JIN HEUNG BU “Motivar, levantar el Espíritu y Ánimo de los miembros MDK”</li>
+         <li>Moo Pal Dan Khum.</li>
+         <li>HO HOP CHO CHUNG: Comprensión de la respiración.</li>
+         <li>Conexión correcta de la respiración y los movimientos; aplicación de la expansión y contracción interior.</li>
+         <li>Estudio, desarrollo y aplicación de ejercicios de Ki.</li>
+         <li>Comprensión de CHONG SHIN TONG IL.</li>
+         <li>Verificar si los estudiantes efectúan sus movimientos con Poder Interior (Ki), o si solamente trabajan físicamente.</li>
+         <li>Aplicación del principio “Move without moving” (Moverse sin moverse o extensión del poder).</li>
+         <li>Desarrollar seminarios y/o cursos sobre estos temas.</li>
+         <li>A cargo de: Ruben Bracco SBN y Alberto Nuñez SBN</li>
+        </ul>
+        <!-- Contenedor de imágenes: horizontal en PC, vertical en móvil -->
+        <div class="w-full flex flex-col lg:flex-row justify-center items-center gap-4 mt-4">
+          <img src="Imagenes/ORGWMDK/RubenBracco.webp"
+          class="hidden rounded shadow-md w-[150px] h-[200px] object-cover"
+          onload="this.classList.remove('hidden')">
+
+          <img src="Imagenes/ORGWMDK/AlbertoNunez.webp"
+          class="hidden rounded shadow-md w-[150px] h-[200px] object-cover"
+          onload="this.classList.remove('hidden')">
+
+          <img src="Imagenes/ORGWMDK/nombre3.webp"
+          class="hidden rounded shadow-md w-[150px] h-[200px] object-cover"
+          onload="this.classList.remove('hidden')">
+        </div>
+
+      </div>
+    </section>
+
+  <!-- Sección WEH GUNG BU  -->
+  <section id="wehgungbu" class="w-full bg-blue-900 bg-opacity-50 py-8 px-4 flex flex-col items-center animate-slideDown">
+   <h2 class="text-3xl font-bold text-red-600 mb-4 text-center bg-blue-900 p-4 rounded-md">
+      WEH GUNG BU: (Energía externa)
+   </h2>
+    <div class="bg-white bg-opacity-50 text-black max-w-2xl mx-auto p-6 rounded shadow-md text-justify">
+
+      <ul class="list-disc list-inside space-y-2">
+       <li>MISION: GI SOOL “Estandarización de las Técnicas”</li>
+       <li>Uso de Hu Ri. Conexión de la cadera en cada ejecución.</li>
+       <li>Estandarización de los programas de estudio.</li>
+       <li>Aplicación de la correcta cadena de comando.</li>
+       <li>RYUN BOP: Verificación y mejoramiento de la condición física.</li>
+       <li>Comprensión de HIM CHO CHUNG ‐ SHIN CHOOK ‐ WAN GUP.</li>
+       <li>Conocimiento perfecto de cada Hyung y su aplicación.</li>
+       <li>Conocimiento de SIP SAM SEH ‐ OH HENG ‐ PAL GWE en todo entrenamiento.</li>
+       <li>Desarrollar seminarios y/o cursos sobre estos temas.</li>
+        <li>A cargo de: Fernando Arboleya SBN, Germán Baigorria SBN y Gerardo Samsó SBN</li>
+      </ul>
+        <!-- Contenedor de imágenes: horizontal en PC, vertical en móvil -->
+        <div class="w-full flex flex-col lg:flex-row justify-center items-center gap-4 mt-4">
+          <img src="Imagenes/ORGWMDK/FernandoArboleya.webp"
+          class="hidden rounded shadow-md w-[150px] h-[200px] object-cover"
+          onload="this.classList.remove('hidden')">
+
+          <img src="Imagenes/ORGWMDK/GermanBaigorria.webp"
+          class="hidden rounded shadow-md w-[150px] h-[200px] object-cover"
+          onload="this.classList.remove('hidden')">
+
+          <img src="Imagenes/ORGWMDK/GerardoSamso.webp"
+          class="hidden rounded shadow-md w-[150px] h-[200px] object-cover"
+          onload="this.classList.remove('hidden')">
+        </div>
+
+    </div>
+  </section>
+
+  <!-- Sección TAC ASSISTANT  -->
+  <section id="tacassistant" class="w-full bg-blue-900 bg-opacity-50 py-8 px-4 flex flex-col items-center animate-slideDown">
+   <h2 class="text-3xl font-bold text-red-600 mb-4 text-center bg-blue-900 p-4 rounded-md">
+      TAC ASSISTANT: (Asistentes del TAC)
+   </h2>
+    <div class="bg-white bg-opacity-50 text-black max-w-2xl mx-auto p-6 rounded shadow-md text-justify">
+
+      <ul class="list-disc list-inside space-y-2">
+       <li>MISION: MOO DO SHIM GONG “el corazón de nuestro Arte”</li>
+       <li>Deben colaborar, dirigir, guiar y participar en todo lo que pueda representar a Soo Bahk Do Moo Duk Kwan (exámenes, clases, seminarios,
+cursos especiales, torneos, demostraciones, etc.).</li>
+       <li>Revisar el MOO DO SHIM GONG: Disciplina Mental. Implica profesionalismo, apropiado comienzo y final, correcto saludo (inclinación,
+demostración de Respeto).</li>
+       <li>Revisar el MOO DO JA SEH: Postura correcta, trato afable pero firme, conciencia de la presencia de miembros más avanzados, permanente
+conciencia de la actividad.</li>
+       <li>CALLERS: en eventos Oficiales.</li>
+       <li>SERVICIO CONTINUO AL TAC: asistir al TAC en todos los eventos que se requiera desde la organización hasta la ejecución.</li>
+       <li>A cargo de: Antonella Blotta SBN y Damián Buonanotte SBN</li>
+      </ul>
+        <!-- Contenedor de imágenes: horizontal en PC, vertical en móvil -->
+        <div class="w-full flex flex-col lg:flex-row justify-center items-center gap-4 mt-4">
+          <img src="Imagenes/ORGWMDK/AntonellaBlotta.webp"
+          class="hidden rounded shadow-md w-[150px] h-[200px] object-cover"
+          onload="this.classList.remove('hidden')">
+
+          <img src="Imagenes/ORGWMDK/Damian Buonanotte.webp"
+          class="hidden rounded shadow-md w-[150px] h-[200px] object-cover"
+          onload="this.classList.remove('hidden')">
+
+          <img src="Imagenes/ORGWMDK/nombre3.webp"
+          class="hidden rounded shadow-md w-[150px] h-[200px] object-cover"
+          onload="this.classList.remove('hidden')">
+        </div>
+
+    </div>
+  </section>
+
+  
+<!-- Sección DIGITAL BU -->
+  <section id="digitalbu" class="w-full bg-blue-900 bg-opacity-50 py-8 px-4 flex flex-col items-center animate-slideDown">
+  <h2 class="text-3xl font-bold text-red-600 mb-4 text-center bg-blue-900 p-4 rounded-md">
+    DIGITAL BU: (Grupo Responsables Digital)
+  </h2>
+  <div class="bg-white bg-opacity-50 text-black max-w-2xl mx-auto p-6 rounded shadow-md text-justify">
+    <ul class="list-disc list-inside space-y-2">
+      <li>MISION: GONGSIG JEONGBO “Información Oficial”</li>
+      <li>Deben velar por la seguridad en la información digital (redes sociales, páginas web, fotos, videos, papers, etc).</li>
+      <li>Se encargan de filtrar y adecuar la información que se comparte como Oficial de la Escuela.</li>
+      <li>Establecer las pautas y recomendaciones a los alumnos , para cuidar el Arte.</li>
+      <li>Distribuyen la información Oficial de la Escuela, dentro y fuera del país.</li>
+      <li>Manejan el WMDK ORG ICS.</li>
+      <li>Colaborar con la AASBDMDK en la difusión de sus informes de interés.</li>
+      <li>Colaborar con la elaboración de publicidad de los Eventos Oficiales.</li>
+      <li>A cargo de: Marcelo Picarelli SBN y Federico Bravo SBN.</li>
+    </ul>
+    <!-- Contenedor de imágenes -->
+    <div class="w-full flex flex-col lg:flex-row justify-center items-center gap-4 mt-4">
+      <img src="Imagenes/ORGWMDK/MarceloPicarelli.webp" class="hidden rounded shadow-md w-[150px] h-[200px] object-cover" onload="this.classList.remove('hidden')">
+      <img src="Imagenes/ORGWMDK/FedericoBravo.webp" class="hidden rounded shadow-md w-[150px] h-[200px] object-cover" onload="this.classList.remove('hidden')">
+      <img src="Imagenes/ORGWMDK/nombre3.webp" class="hidden rounded shadow-md w-[150px] h-[200px] object-cover" onload="this.classList.remove('hidden')">
+    </div>
+    <!-- Aquí agregamos el link -->
+    <div class="mt-4 text-center">
+      <a href="DigitalBu.html" class="text-blue-500 underline" target="_blank">Visitar más información</a>
+    </div>
+  </div>
+  </section>
+
+     <!-- Sección Designado -->
+    <section  id="designado" class="w-full bg-blue-900 bg-opacity-50 py-8 px-4 flex flex-col items-center animate-slideDown">
+   <h2 class="text-3xl font-bold text-red-600 mb-4 text-center bg-blue-900 p-4 rounded-md">
+      Designado Nacional
+   </h2>
+    <div class="bg-white bg-opacity-50 text-black max-w-2xl mx-auto p-6 rounded shadow-md text-justify">
+   
+      <ul class="list-disc list-inside space-y-2">
+        <li>Cada país miembro tendrá un representante Designado para representarlo.</li>
+        <li>El representante designado de cada país asistirá al Simposio Mundial de Moo Duk Kwan.  </li>
+        <li>En años alternos, los países apoyarán la asistencia del representante designado de la 
+            zona para asistir al Simposio Mundial de Moo Duk Kwan.</li>
+        <li>Los Designados Nacionales son designados por el Presidente de World Moo Duk Kwan en función de las habilidades de comunicación, la capacidad de 
+            representar a su país y la dedicación al Moo Duk Kwan</li>
+        <li>Los Designados Nacionales proporcionarán temas de agenda al WMDK en función de las necesidades y preocupaciones de los miembros de su país. .</li>
+        <li>Los Designados Nacionales revisarán otros temas de agenda propuestos y se 
+            comunicarán con sus miembros para determinar sus deseos sobre temas específicos.</li>
+        <li>Los Designados Nacionales informarán las actas del Simposio y del Simposio de Zona a los líderes de su organización nacional.</li>
+        <li>Un Designado Nacional puede delegar tareas necesarias para cumplir con las 
+            responsabilidades del designado (por ejemplo: un asistente para mecanografiar y/o traducir un documento). </li>
+        <li>Se alienta a los Designados Nacionales a proporcionar contenido apropiado de su país para el sitio web de World Moo Duk Kwan. El contenido podría
+            incluir imágenes y texto de los líderes de ese país, propietarios de estudios, instructores y miembros en general. 
+            Los Designados Nacionales son responsables de coordinar la traducción cuando corresponda.</li>
+        
+        <li>A cargo de: Oscar Molina SBN</li>
+      </ul>
+      <!-- Contenedor de imágenes -->
+      <div class="w-full lg:w-1/3 flex flex-col gap-4">
+        <img src="Imagenes/ORGWMDK/OscarMolina_800x1203.webp" class="rounded shadow-md hidden max-w-[200px] w-full mx-auto" onload="this.classList.remove('hidden')">
+        
+      </div>
+    </section> 
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm w-full">
+    Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – © World Moo Duk Kwan.
+  </footer>
+
+</body>
+</html>

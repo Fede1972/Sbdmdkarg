@@ -12,11 +12,11 @@ body.pagina-dojang {
   background-size: cover;
   background-attachment: fixed;
   background-blend-mode: overlay;
-  background-color: rgba(255, 255, 255, 0.65); /* Blanco traslúcido */
+  background-color: rgba(255, 255, 255, 0.70); /* Blanco traslúcido */
 }
 
 body.pagina-5valores {
-  background: url('Imagenes/fondoZen.webp') no-repeat center center fixed;
+  background: url('Imagenes/fondovalores.webp') no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   background-blend-mode: overlay;

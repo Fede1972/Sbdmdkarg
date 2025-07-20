@@ -1,58 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cinco Valores Moo Do</title>
+  <link rel="canonical" href="https://www.worldmoodukkwan.ar/5valores.html">
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.tailwindcss.com"></script> <!-- necesario para tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    .valores-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 20px;
-      background-color: #ffffff00;
-      transform: scale(1.00);
-      transform-origin: top center;
-    }
-
-    .valor {
-      flex: 1 1 18%;
-      max-width: 20%;
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 8px;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .valor img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .valor:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    }
-
-    @media (max-width: 768px) {
-      .valor {
-        max-width: 48%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .valor {
-        max-width: 100%;
-      }
-    }
-
     section {
       padding: 40px 20px;
       background-color: #eef2ff;
@@ -63,20 +19,25 @@
 
     section h2 {
       color: #002244;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    section p {
+      font-size: 1rem;
+      line-height: 1.6;
     }
   </style>
 </head>
+<body class="pagina-5valores bg-white">
 
-<body class="pagina-5valores">
-
-  <!-- Menú unificado cargado desde menu.html -->
+  <!-- Menú -->
   <div id="menu-container"></div>
   <script>
     fetch("menu.html")
       .then(res => res.text())
       .then(html => {
         document.getElementById("menu-container").innerHTML = html;
-        // Activar menú hamburguesa
         const toggle = document.getElementById('menu-toggle');
         const menu = document.getElementById('mobile-menu');
         if (toggle && menu) {
@@ -87,20 +48,176 @@
       });
   </script>
 
-  <main>
-    <div class="valores-container">
-      <a href="construccion.html" class="valor"><img src="Imagenes/5valores1.webp" alt="Historia"></a>
-      <a href="construccion.html" class="valor"><img src="Imagenes/5valores2.webp" alt="Tradición"></a>
-      <a href="construccion.html" class="valor"><img src="Imagenes/5valores3.webp" alt="Disciplina / Respeto"></a>
-      <a href="construccion.html" class="valor"><img src="Imagenes/5valores4.webp" alt="Filosofía"></a>
-      <a href="construccion.html" class="valor"><img src="Imagenes/5valores5.webp" alt="Técnica"></a>
+  <main class="p-4">
+
+    <!-- Galería horizontal -->
+    <div class="flex flex-nowrap justify-between items-center gap-1 px-2 overflow-x-auto">
+      <a href="#historia" class="w-[18%]">
+        <img src="Imagenes/5valores1.webp" alt="Historia" class="w-full rounded shadow-md hover:scale-105 transition">
+      </a>
+      <a href="#tradicion" class="w-[18%]">
+        <img src="Imagenes/5valores2.webp" alt="Tradición" class="w-full rounded shadow-md hover:scale-105 transition">
+      </a>
+      <a href="#disciplina" class="w-[18%]">
+        <img src="Imagenes/5valores3.webp" alt="Disciplina" class="w-full rounded shadow-md hover:scale-105 transition">
+      </a>
+      <a href="#filosofia" class="w-[18%]">
+        <img src="Imagenes/5valores4.webp" alt="Filosofía" class="w-full rounded shadow-md hover:scale-105 transition">
+      </a>
+      <a href="#tecnica" class="w-[18%]">
+        <img src="Imagenes/5valores5.webp" alt="Técnica" class="w-full rounded shadow-md hover:scale-105 transition">
+      </a>
     </div>
+
+    <!-- Secciones -->
+    <section id="historia">
+         <h2 class="text-2xl font-bold text-center text-blue-900 mb-4">Historia</h2>
+      <p>La historia nos define. Entendemos quiénes somos al conocer nuestra historia (pasado). Este conocimiento ayuda a guiar nuestras acciones con una conciencia de nuestra fundación, nuestra historia, nuestro pasado y nos ayuda a comprender dónde estamos en el presente a medida que creamos nuestro futuro.</p>
+      <div class="flex flex-wrap justify-center gap-2 my-6">
+        <button onclick="mostrarAnexo(this, 'documentos/YUK SA Historia SBDMDK.pdf')" data-archivo="documentos/YUK SA Historia SBDMDK.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">Historia</button>
+        <button onclick="mostrarAnexo(this, 'documentos/50aniversarioHistoria.pdf')" data-archivo="documentos/50aniversarioHistoria.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">50 aniversario Arg.</button>
+      </div>
+    </section>
+
+    <section id="tradicion">
+     <h2 class="text-2xl font-bold text-center text-blue-900 mb-4">Tradición</h2>
+  <p>
+    Accedé a las ediciones del <em>Moo Yei Shi Bo</em>, la histórica revista mensual de Soo Bahk Do Moo Duk Kwan. 
+    Esta publicación fue un pilar fundamental para difundir las enseñanzas, valores y filosofía del arte a todos los practicantes.
+  </p>
+  <div class="flex justify-center mt-4 gap-2 my-6">
+    <a href="Tradicion.html" 
+       class="px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded font-bold">
+      Ver volúmenes del Moo Yei Shi Bo
+    </a>
+    <button onclick="mostrarAnexo(this, 'documentos/DOBOK/DOBOK OFICIAL.pdf')" data-archivo="documentos/DOBOK/DOBOK OFICIAL.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">DOBOK</button>
+
+  </div>
+    </section>
+
+    <section id="disciplina">
+         <h2 class="text-2xl font-bold text-center text-blue-900 mb-4">Disciplina / Respeto</h2>
+      <p>Soo Bahk Do Moo Duk Kwan es un arte marcial tradicional basado en el respeto para toda la vida. Es importante desarrollar este respeto de nuestro arte, nuestro país, nuestro Gran Maestro, Mayores miembros Dan, y todos los miembros de acuerdo con los principios de Soo Bahk Do Moo Duk Kwan.</p>
+      <div class="flex flex-wrap justify-center gap-2 my-6">
+        <button onclick="mostrarAnexo(this, 'documentos/CORTESIA Y ETIQUETA.pdf')" data-archivo="documentos/CORTESIA Y ETIQUETA.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">Cortesia y Etiqueta</button>
+      </div>
+    </section>
+
+    <section id="filosofia">
+      <h2 class="text-2xl font-bold text-center text-blue-900 mb-4">Filosofía</h2>
+      <p>Nuestra filosofía guía nuestra intención (Shim Gong) hacia el bien. Nuestra filosofía incluye, por ejemplo, los 8 conceptos clave, los 10 artículos de fe sobre el entrenamiento mental y los 5 valores.</p>
+      <div class="flex flex-wrap justify-center gap-2 my-6">
+        <button onclick="mostrarAnexo(this, 'documentos/Filosofia/Filosofia1.pdf')" data-archivo="documentos/Filosofia/Filosofia1.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">Información General</button>
+        <button onclick="mostrarAnexo(this, 'documentos/Filosofia/Filosofia2.pdf')" data-archivo="documentos/Filosofia/Filosofia2.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">TAO</button>
+        <button onclick="mostrarAnexo(this, 'documentos/Filosofia/Filosofia3.pdf')" data-archivo="documentos/Filosofia/Filosofia3.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">Cuerpo y Mente</button>
+        <button onclick="mostrarAnexo(this, 'documentos/Filosofia/Filosofia4.pdf')" data-archivo="documentos/Filosofia/Filosofia4.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">Sip Sam Seh</button>
+        <button onclick="mostrarAnexo(this, 'documentos/Filosofia/Filosofia5.pdf')" data-archivo="documentos/Filosofia/Filosofia5.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">Combate Moo Do</button>
+        <button onclick="mostrarAnexo(this, 'documentos/Filosofia/Filosofia6.pdf')" data-archivo="documentos/Filosofia/Filosofia6.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">Moo Pal Dan Khum</button>
+        <button onclick="mostrarAnexo(this, 'documentos/Filosofia/Filosofia7.pdf')" data-archivo="documentos/Filosofia/Filosofia7.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">8 Conceptos Claves</button>
+        <button onclick="mostrarAnexo(this, 'documentos/Filosofia/Filosofia8.pdf')" data-archivo="documentos/Filosofia/Filosofia8.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">10 Principios de Fe</button>
+        <button onclick="mostrarAnexo(this, 'documentos/Filosofia/Filosofia9.pdf')" data-archivo="documentos/Filosofia/Filosofia9.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">Formas-Hyung</button>
+      </div>
+    </section>
+
+    <section id="tecnica">
+         <h2 class="text-2xl font-bold text-center text-blue-900 mb-4">Técnica</h2>
+        <p>Las técnicas son elementos muy visibles de Soo Bahk Do Moo Duk Kwan. Obtenemos los beneficios de la flexibilidad, las habilidades de defensa personal y la salud a medida que entrenamos para mejorar nuestras técnicas.
+         Las técnicas de Ki Cho, Hyung y Dae Ryun son excelentes herramientas para conectarse con los otros cuatro Valores Moo Do.</p>
+        <div class="flex flex-wrap justify-center gap-2 my-6">
+          <button onclick="mostrarAnexo(this, 'documentos/Tecnica/HYUNG 2025.pdf')" data-archivo="documentos/Tecnica/HYUNG 2025.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">Resumen de HYUNG/Formas</button>
+          <button onclick="mostrarAnexo(this, 'documentos/Tecnica/Programa de Estudio y Examen - Kup y Dan - ARG2025.pdf')" data-archivo="documentos/Tecnica/Programa de Estudio y Examen - Kup y Dan - ARG2025.pdf" class="btn-anexo min-w-[140px] px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded">Programa de estudio y Examen</button>
+        </div>
+    </section>
+
+
+    <!-- Visor global (solo una vez) -->
+    <div id="contenedorVisor" class="hidden w-full aspect-[8.5/11] max-w-5xl mx-auto mb-4 rounded overflow-hidden border">
+      <iframe id="visorAnexo" class="w-full h-full" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="text-center">
+      <a id="linkExterno" href="#" target="_blank" 
+         class="hidden inline-block px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">
+        📄 Abrir anexo en otra pestaña
+      </a>
+    </p>
   </main>
 
-   <!-- Pie de página -->
-  <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm mt-auto">
-    Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – © World Moo Duk Kwan.
+  <!-- Botón volver arriba -->
+  <button id="scrollToTopBtn" 
+          class="fixed bottom-6 right-6 bg-blue-700 hover:bg-blue-800 text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300"
+          aria-label="Volver al inicio" title="Volver al inicio">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 bg-opacity-80 p-4 text-center text-sm mt-10">
+    Asociación Argentina de Soo Bahk Do - Moo Duk Kwan – ©World Moo Duk Kwan.
   </footer>
 
+  <!-- Scripts -->
+  <script>
+    function marcarBotonActivo(boton) {
+      document.querySelectorAll('.btn-anexo').forEach(btn => {
+        btn.classList.remove('bg-red-700', 'hover:bg-red-800');
+        btn.classList.add('bg-blue-700', 'hover:bg-blue-800');
+      });
+      boton.classList.remove('bg-blue-700', 'hover:bg-blue-800');
+      boton.classList.add('bg-red-700', 'hover:bg-red-800');
+    }
+
+    function mostrarAnexo(boton, archivo) {
+      const visor = document.getElementById('visorAnexo');
+      const link = document.getElementById('linkExterno');
+      const contenedor = document.getElementById('contenedorVisor');
+
+      visor.src = archivo + '#toolbar=0';
+      link.href = archivo;
+
+      contenedor.classList.remove('hidden');
+      link.classList.remove('hidden');
+
+      marcarBotonActivo(boton);
+
+      sessionStorage.setItem('anexo', archivo);
+
+      // Desplazar hacia visor
+      setTimeout(() => contenedor.scrollIntoView({ behavior: 'smooth' }), 100);
+
+      // Compatibilidad móvil: ocultar visor si no carga bien
+      if (/iPhone|iPad|Android/i.test(navigator.userAgent)) {
+        visor.classList.add('hidden');
+        link.textContent = "📄 Ver anexo (PDF no visible en este dispositivo)";
+      } else {
+        visor.classList.remove('hidden');
+        link.textContent = "📄 Abrir anexo en otra pestaña";
+      }
+    }
+
+    // Restaurar visor si había uno seleccionado
+    window.addEventListener('DOMContentLoaded', () => {
+      const archivo = sessionStorage.getItem('anexo');
+      if (archivo) {
+        const boton = document.querySelector(`.btn-anexo[data-archivo="${archivo}"]`);
+        if (boton) mostrarAnexo(boton, archivo);
+      }
+    });
+
+    // Mostrar botón volver arriba
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
+        scrollBtn.classList.add('opacity-100');
+      } else {
+        scrollBtn.classList.add('opacity-0', 'pointer-events-none');
+        scrollBtn.classList.remove('opacity-100');
+      }
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
